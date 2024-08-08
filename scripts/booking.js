@@ -11,8 +11,7 @@ let dailyRate = FULL_DAY;
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 
-
-const bookingDays = document.querySelectorAll('li');
+let bookingDays = document.querySelectorAll('li');
 
 bookingDays.forEach(button => {
     button.addEventListener('click', () => {
@@ -26,7 +25,6 @@ bookingDays.forEach(button => {
 );
 }
 );
-
 
 
 /********* clear days *********/
@@ -70,9 +68,9 @@ fullDay.addEventListener('click', () => {
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 
 function calculateCost() {
-    const selectedDays = document.querySelectorAll('li.clicked');
-    const numberDays = selectedDays.length; 
-    const totalCost = numberDays * dailyRate; 
+    let selectedDays = document.querySelectorAll('li.clicked');
+    let numberDays = selectedDays.length; 
+    let totalCost = numberDays * dailyRate; 
     document.getElementById('calculated-cost').innerHTML = totalCost;
 }
 
